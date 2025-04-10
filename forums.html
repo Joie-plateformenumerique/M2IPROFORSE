@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forums de discussion - Plateforme de Transition Professionnelle</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+        }
+        
+        .header {
+            background-color: #4285f4;
+            color: white;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+        
+        .nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .forums-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .forums-title {
+            font-size: 32px;
+            margin: 20px 0;
+            color: #333;
+        }
+        
+        .search-bar {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        
+        .search-input {
+            flex-grow: 1;
+            margin-right: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            background-color: white;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: #4285f4;
+        }
+        
+        .new-discussion-btn {
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            padding: 0 30px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        
+        .new-discussion-btn:hover {
+            background-color: #2b6bcb;
+        }
+        
+        .forums-header {
+            display: flex;
+            background-color: #f0f2f5;
+            padding: 15px 20px;
+            border-radius: 10px 10px 0 0;
+            font-weight: bold;
+        }
+        
+        .category-col {
+            flex: 2;
+        }
+        
+        .subjects-col {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .activity-col {
+            flex: 1;
+            text-align: right;
+        }
+        
+        .forum-category {
+            background-color: white;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-item {
+            display: flex;
+            padding: 20px;
+            border-bottom: 1px solid #f0f2f5;
+            align-items: center;
+        }
+        
+        .category-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            margin-right: 15px;
+        }
+        
+        .digital-icon {
+            background-color: #e6f0ff;
+            color: #4285f4;
+        }
+        
+        .reconversion-icon {
+            background-color: #e6e6ff;
+            color: #5733b3;
+        }
+        
+        .retirement-icon {
+            background-color: #e6ffea;
+            color: #00a651;
+        }
+        
+        .collaboration-icon {
+            background-color: #fff2e6;
+            color: #ff8c00;
+        }
+        
+        .category-content {
+            flex-grow: 1;
+        }
+        
+        .category-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+            display: block;
+            text-decoration: none;
+        }
+        
+        .category-title:hover {
+            color: #4285f4;
+        }
+        
+        .category-description {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .category-stats {
+            flex: 1;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .category-activity {
+            flex: 1;
+            text-align: right;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .pagination a {
+            padding: 10px 15px;
+            margin: 0 5px;
+            background-color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #4285f4;
+            border: 1px solid #ddd;
+        }
+        
+        .pagination a:hover {
+            background-color: #f0f2f5;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                padding: 15px;
+                gap: 15px;
+            }
+            
+            .forums-title {
+                font-size: 24px;
+            }
+            
+            .search-bar {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .search-input {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            
+            .new-discussion-btn {
+                width: 100%;
+                justify-content: center;
+                padding: 15px;
+            }
+            
+            .category-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .category-icon {
+                margin-bottom: 10px;
+            }
+            
+            .category-stats, .category-activity {
+                margin-top: 10px;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">JOIE - Plateforme de Transition Professionnelle</div>
+        <nav class="nav">
+            <a href="accueil.html">Modules</a>
+            <a href="forums.html">Forums</a>
+            <a href="transmission-savoirs.html">Mentorat</a>
+            <a href="profil.html">Profil</a>
+        </nav>
+    </header>
+    
+    <div class="forums-container">
+        <h1 class="forums-title">Forums de discussion</h1>
+        
+        <div class="search-bar">
+            <input type="text" class="search-input" placeholder="🔍 Rechercher dans les forums...">
+            <button class="new-discussion-btn">+ Nouvelle discussion</button>
+        </div>
+        
+        <div class="forums-content">
+            <div class="forums-header">
+                <div class="category-col">Catégories de discussion</div>
+                <div class="subjects-col">Sujets</div>
+                <div class="activity-col">Activité</div>
+            </div>
+            
+            <div class="forum-category">
+                <div class="category-item">
+                    <div class="category-icon digital-icon">💻</div>
+                    <div class="category-content">
+                        <a href="#" class="category-title">Transition numérique</a>
+                        <div class="category-description">Discussions sur l'adaptation aux nouvelles technologies</div>
+                    </div>
+                    <div class="category-stats">42</div>
+                    <div class="category-activity">Il y a 10 minutes</div>
+                </div>
+                
+                <div class="category-item">
+                    <div class="category-icon reconversion-icon">🔄</div>
+                    <div class="category-content">
+                        <a href="#" class="category-title">Reconversion professionnelle</a>
+                        <div class="category-description">Conseils et partage d'expériences de reconversion</div>
+                    </div>
+                    <div class="category-stats">28</div>
+                    <div class="category-activity">Il y a 1 heure</div>
+                </div>
+                
+                <div class="category-item">
+                    <div class="category-icon retirement-icon">👵</div>
+                    <div class="category-content">
+                        <a href="#" class="category-title">Préparation à la retraite</a>
+                        <div class="category-description">Tous les aspects de la transition vers la retraite</div>
+                    </div>
+                    <div class="category-stats">36</div>
+                    <div class="category-activity">Hier</div>
+                </div>
+                
+                <div class="category-item">
+                    <div class="category-icon collaboration-icon">👥</div>
+                    <div class="category-content">
+                        <a href="#" class="category-title">Collaboration intergénérationnelle</a>
+                        <div class="category-description">Échanges sur le travail entre générations</div>
+                    </div>
+                    <div class="category-stats">53</div>
+                    <div class="category-activity">Il y a 2 jours</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="pagination">
+            <a href="#">← Précédent</a>
+            <a href="#">1/3</a>
+            <a href="#">Suivant →</a>
+        </div>
+    </div>
+</body>
+</html>

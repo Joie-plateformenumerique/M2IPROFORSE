@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcasts - Plateforme de Transition Professionnelle</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+        }
+        
+        .header {
+            background-color: #4285f4;
+            color: white;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+        
+        .nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .module-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .module-title {
+            font-size: 32px;
+            margin: 20px 0;
+            color: #333;
+            text-align: center;
+        }
+        
+        .module-description {
+            background-color: #c5dbff;
+            color: #2057b3;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(66, 133, 244, 0.3);
+            line-height: 1.6;
+        }
+        
+        .podcast-categories {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .category {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-title {
+            color: #2057b3;
+            font-size: 22px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        .podcast-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        
+        .podcast-card {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+        
+        .podcast-card:hover {
+            background-color: #f0f7ff;
+        }
+        
+        .podcast-icon {
+            font-size: 24px;
+            color: #4285f4;
+            min-width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #e6f0ff;
+            border-radius: 50%;
+        }
+        
+        .podcast-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .podcast-title {
+            font-size: 16px;
+            color: #333;
+        }
+        
+        .podcast-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 5px;
+        }
+        
+        .btn-download {
+            background-color: #34a853;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-download:hover {
+            background-color: #2d9049;
+        }
+        
+        .btn-play {
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-play:hover {
+            background-color: #2b6ed9;
+        }
+        
+        .btn-back {
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-back:hover {
+            background-color: #2b6ed9;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                padding: 15px;
+                gap: 15px;
+            }
+            
+            .podcast-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .podcast-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .podcast-actions {
+                width: 100%;
+                justify-content: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">JOIE - Plateforme de Transition Professionnelle</div>
+        <nav class="nav">
+            <a href="accueil.html">Modules</a>
+            <a href="forums.html">Forums</a>
+            <a href="transmission-savoirs.html">Mentorat</a>
+            <a href="profil.html">Profil</a>
+        </nav>
+    </header>
+    
+    <div class="module-container">
+        <a href="accueil.html" class="btn-back">← Retour aux modules</a>
+        
+        <h1 class="module-title">Podcasts</h1>
+        
+        <div class="module-description">
+            <p>Découvrez nos podcasts sur la reconversion professionnelle pour apprendre pendant vos déplacements.</p>
+        </div>
+        
+        <div class="podcast-categories">
+            <div class="category">
+                <h2 class="category-title">Briser les préjugés</h2>
+                <div class="podcast-list">
+                    <div class="podcast-card">
+                        <div class="podcast-icon">🎧</div>
+                        <div class="podcast-content">
+                            <div class="podcast-title">On n'a pas le même âge, mais on se comprend</div>
+                            <div class="podcast-actions">
+                                <button class="btn-play">▶️ Écouter</button>
+                                <button class="btn-download">⬇️ Télécharger</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="podcast-card">
+                        <div class="podcast-icon">🎧</div>
+                        <div class="podcast-content">
+                            <div class="podcast-title">Générations croisées : ce qu'on apprend les uns des autres</div>
+                            <div class="podcast-actions">
+                                <button class="btn-play">▶️ Écouter</button>
+                                <button class="btn-download">⬇️ Télécharger</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="podcast-card">
+                        <div class="podcast-icon">🎧</div>
+                        <div class="podcast-content">
+                            <div class="podcast-title">Boomers et Gen Z : clash ou complémentarité ?</div>
+                            <div class="podcast-actions">
+                                <button class="btn-play">▶️ Écouter</button>
+                                <button class="btn-download">⬇️ Télécharger</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="podcast-card">
+                        <div class="podcast-icon">🎧</div>
+                        <div class="podcast-content">
+                            <div class="podcast-title">Et si on arrêtait de se juger ?</div>
+                            <div class="podcast-actions">
+                                <button class="btn-play">▶️ Écouter</button>
+                                <button class="btn-download">⬇️ Télécharger</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="podcast-card">
+                        <div class="podcast-icon">🎧</div>
+                        <div class="podcast-content">
+                            <div class="podcast-title">Préjugés au boulot : on en parle entre générations</div>
+                            <div class="podcast-actions">
+                                <button class="btn-play">▶️ Écouter</button>
+                                <button class="btn-download">⬇️ Télécharger</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="category">
+                <h2 class="category-title">Mieux travailler ensemble</h2>
+                <div class="podcast-list">
+                    <div class="podcast-card">
+                        <div class="podcast-icon">🎧</div>
+                        <div class="podcast-content">
+                            <div class="podcast-title">Travailler avec des jeunes : les conseils d'un senior curieux</div>
+                            <div class="podcast-actions">
+                                <button class="btn-play">▶️ Écouter</button>
+                                <button class="btn-download">⬇️ Télécharger</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="podcast-card">
+                        <div class="podcast-icon">🎧</div>
+                        <div class="podcast-content">
+                            <div class="podcast-title">L'esprit d'équipe, c'est pas une question d'âge</div>
+                            <div class="podcast-actions">
+                                <button class="btn-play">▶️ Écouter</button>
+                                <button class="btn-download">⬇️ Télécharger</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="podcast-card">
+                        <div class="podcast-icon">🎧</div>
+                        <div class="podcast-content">
+                            <div class="podcast-title">T'as 25 ans, j'en ai 60… et pourtant on bosse super bien ensemble</div>
+                            <div class="podcast-actions">
+                                <button class="btn-play">▶️ Écouter</button>
+                                <button class="btn-download">⬇️ Télécharger</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="podcast-card">
+                        <div class="podcast-icon">🎧</div>
+                        <div class="podcast-content">
+                            <div class="podcast-title">Ce que j'aurais aimé que mon chef de 25 ans sache</div>
+                            <div class="podcast-actions">
+                                <button class="btn-play">▶️ Écouter</button>
+                                <button class="btn-download">⬇️ Télécharger</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="category">
+                <h2 class="category-title">Apprendre ensemble</h2>
+                <div class="podcast-list">
+                    <div class="podcast-card">
+                        <div class="podcast-icon">🎧</div>
+                        <div class="podcast-content">
+                            <div class="podcast-title">La transmission, c'est dans les deux sens</div>
+                            <div class="podcast-actions">
+                                <button class="btn-play">▶️ Écouter</button>
+                                <button class="btn-download">⬇️ Télécharger</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="podcast-card">
+                        <div class="podcast-icon">🎧</div>
+                        <div class="podcast-content">
+                            <div class="podcast-title">Jeune mentor, senior apprenti ? Et pourquoi pas !</div>
+                            <div class="podcast-actions">
+                                <button class="btn-play">▶️ Écouter</button>
+                                <button class="btn-download">⬇️ Télécharger</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="podcast-card">
+                        <div class="podcast-icon">🎧</div>
+                        <div class="podcast-content">
+                            <div class="podcast-title">Quand l'expérience rencontre l'énergie</div>
+                            <div class="podcast-actions">
+                                <button class="btn-play">▶️ Écouter</button>
+                                <button class="btn-download">⬇️ Télécharger</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="podcast-card">
+                        <div class="podcast-icon">🎧</div>
+                        <div class="podcast-content">
+                            <div class="podcast-title">J'ai appris un truc d'un junior cette semaine</div>
+                            <div class="podcast-actions">
+                                <button class="btn-play">▶️ Écouter</button>
+                                <button class="btn-download">⬇️ Télécharger</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="podcast-card">
+                        <div class="podcast-icon">🎧</div>
+                        <div class="podcast-content">
+                            <div class="podcast-title">Des jeunes qui coachent des séniors (et l'inverse)</div>
+                            <div class="podcast-actions">
+                                <button class="btn-play">▶️ Écouter</button>
+                                <button class="btn-download">⬇️ Télécharger</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="podcast-card">
+                        <div class="podcast-icon">🎧</div>
+                        <div class="podcast-content">
+                            <div class="podcast-title">Compétences croisées : l'âge, ça change quoi ?</div>
+                            <div class="podcast-actions">
+                                <button class="btn-play">▶️ Écouter</button>
+                                <button class="btn-download">⬇️ Télécharger</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programme de mentorat - Plateforme de Transition Professionnelle</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+        }
+        
+        .header {
+            background-color: #4285f4;
+            color: white;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+        
+        .nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .mentorat-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .mentorat-title {
+            font-size: 32px;
+            margin: 20px 0;
+            color: #333;
+        }
+        
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .tab {
+            padding: 15px 25px;
+            cursor: pointer;
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .tab.active {
+            background-color: #4285f4;
+            color: white;
+        }
+        
+        .tab:not(.active):hover {
+            background-color: #f0f0f0;
+        }
+        
+        .search-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .filter-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .filter-label {
+            font-size: 16px;
+            color: #666;
+        }
+        
+        .filter-dropdown {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: white;
+            min-width: 200px;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .search-button {
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: auto;
+        }
+        
+        .search-button:hover {
+            background-color: #2b6bcb;
+        }
+        
+        .mentor-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .mentor-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .mentor-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .mentor-avatar {
+            width: 80px;
+            height: 80px;
+            background-color: #e6f0ff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #4285f4;
+        }
+        
+        .mentor-details {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+        .mentor-name {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .mentor-title {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .mentor-skills {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .contact-button {
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .contact-button:hover {
+            background-color: #2b6bcb;
+        }
+        
+        .submodules-container {
+            margin-top: 40px;
+        }
+        
+        .submodules-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .submodules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .submodule-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .submodule-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .submodule-icon {
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #c5ffdb;
+            color: #2057b3;
+            font-size: 40px;
+        }
+        
+        .forum-icon {
+            background-color: #c5ffdb;
+            color: #5733b3;
+        }
+        
+        .submodule-content {
+            padding: 20px;
+        }
+        
+        .submodule-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #2057b3;
+        }
+        
+        .forum-title {
+            color: #5733b3;
+        }
+        
+        .submodule-description {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                padding: 15px;
+                gap: 15px;
+            }
+            
+            .mentorat-title {
+                font-size: 24px;
+            }
+            
+            .filter-section {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .search-button {
+                width: 100%;
+                margin-top: 10px;
+            }
+            
+            .mentor-card {
+                flex-direction: column;
+                gap: 20px;
+                align-items: flex-start;
+            }
+            
+            .contact-button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">JOIE - Plateforme de Transition Professionnelle</div>
+        <nav class="nav">
+            <a href="accueil.html">Modules</a>
+            <a href="forums.html">Forums</a>
+            <a href="transmission-savoirs.html">Mentorat</a>
+            <a href="profil.html">Profil</a>
+        </nav>
+    </header>
+    
+    <div class="mentorat-container">
+        <h1 class="mentorat-title">Programme de mentorat</h1>
+        
+        <div class="tabs">
+            <div class="tab active">Trouver un mentor</div>
+            <div class="tab">Mes mentors</div>
+            <div class="tab">Mes mentorés</div>
+            <div class="tab">Calendrier</div>
+        </div>
+        
+        <div class="search-container">
+            <div class="filter-section">
+                <div class="filter-label">Filtrer par :</div>
+                <div class="filter-dropdown">
+                    Compétences <span>▼</span>
+                </div>
+                <div class="filter-dropdown">
+                    Secteur <span>▼</span>
+                </div>
+                <div class="filter-dropdown">
+                    Disponibilité <span>▼</span>
+                </div>
+                <button class="search-button">Rechercher</button>
+            </div>
+        </div>
+        
+        <div class="mentor-cards">
+            <div class="mentor-card">
+                <div class="mentor-info">
+                    <div class="mentor-avatar">JD</div>
+                    <div class="mentor-details">
+                        <div class="mentor-name">Jeanne Dupont</div>
+                        <div class="mentor-title">Experte en Transformation Digitale | 25 ans d'expérience</div>
+                        <div class="mentor-skills">Compétences : Leadership, Gestion du changement, Technologies web</div>
+                    </div>
+                </div>
+                <button class="contact-button">Contacter</button>
+            </div>
+            
+            <div class="mentor-card">
+                <div class="mentor-info">
+                    <div class="mentor-avatar">ML</div>
+                    <div class="mentor-details">
+                        <div class="mentor-name">Marc Leblanc</div>
+                        <div class="mentor-title">Coach en Reconversion | 15 ans dans les RH</div>
+                        <div class="mentor-skills">Compétences : Bilan de compétences, Formation, Conseil en carrière</div>
+                    </div>
+                </div>
+                <button class="contact-button">Contacter</button>
+            </div>
+            
+            <div class="mentor-card">
+                <div class="mentor-info">
+                    <div class="mentor-avatar">SM</div>
+                    <div class="mentor-details">
+                        <div class="mentor-name">Sophie Martin</div>
+                        <div class="mentor-title">Experte Retraite & Transition | 20 ans en conseil financier</div>
+                        <div class="mentor-skills">Compétences : Préparation retraite, Gestion du temps, Bien-être</div>
+                    </div>
+                </div>
+                <button class="contact-button">Contacter</button>
+            </div>
+        </div>
+    </body>
+    </html>

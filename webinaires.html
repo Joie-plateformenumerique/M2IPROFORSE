@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webinaires - JOIE</title>
+    <style>
+        /* Reprise des styles existants */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+        }
+        
+        .header {
+            background-color: #4285f4;
+            color: white;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+        .nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Styles spécifiques à la page webinaires */
+        .module-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .main-title {
+            font-size: 32px;
+            color: #2057b3;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .module-description {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .topic-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .topic-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .topic-title {
+            color: #2057b3;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .topic-description {
+            color: #666;
+            line-height: 1.5;
+            font-size: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px;
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .main-title {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">JOIE - Plateforme de Transition Professionnelle</div>
+        <nav class="nav">
+            <a href="accueil.html">Modules</a>
+            <a href="forums.html">Forums</a>
+            <a href="transmission-savoirs.html">Mentorat</a>
+            <a href="profil.html">Profil</a>
+        </nav>
+    </header>
+
+    <div class="module-container">
+        <h1 class="main-title">Webinaire et classes virtuelles</h1>
+        
+        <p class="module-description">
+            La plateforme JOIE prévoit l'organisation de sessions animées en direct avec des coachs et formateurs. 
+            Des fonctionnalités de replay, de chat en direct, et de sondages interactifs seront mises en place. 
+            Cliquez sur le webinaire et classes virtuelles qui vous intéresse.
+        </p>
+
+        <div class="topics-grid">
+            <div class="topic-card">
+                <a href="#" style="text-decoration: none;"><h3 class="topic-title">Outils numériques en entreprise</h3></a>
+                <p class="topic-description">Maîtriser les outils collaboratifs : Introduction aux outils essentiels pour travailler efficacement en équipe à distance.</p>
+            </div>
+
+            <div class="topic-card">
+                <a href="#" style="text-decoration: none;"><h3 class="topic-title">Transition vers le freelancing</h3></a>
+                <p class="topic-description">Réussir la transition vers le freelancing après 50 ans : Donner les étapes clés pour se lancer en freelance après 50 ans, avec des conseils pratiques et des témoignages.</p>
+            </div>
+
+            <div class="topic-card">
+                <a href="#" style="text-decoration: none;"><h3 class="topic-title">Compétences numériques</h3></a>
+                <p class="topic-description">Développer ses compétences numériques : par où commencer ? Comment se former aux outils numériques et se rendre plus autonome dans son travail.</p>
+            </div>
+
+            <div class="topic-card">
+                <a href="#" style="text-decoration: none;"><h3 class="topic-title">Gestion du stress et bien être au travail</h3></a>
+                <p class="topic-description">Gérer son stress en télétravail : techniques et bonnes pratiques : Comment rester serein·e et productif·ve en travaillant à distance, avec des outils pour mieux gérer son quotidien.</p>
+            </div>
+
+            <div class="topic-card">
+                <a href="#" style="text-decoration: none;"><h3 class="topic-title">Innovation dans le travail</h3></a>
+                <p class="topic-description">Travailler dans un environnement hybride : les clés de la réussite : donner des stratégies pour s’adapter à un mode de travail hybride où bureau et télétravail se mélangent.</p>
+            </div>
+
+            <div class="topic-card">
+                <a href="#" style="text-decoration: none;"><h3 class="topic-title">Création d’entreprise et entrepreneuriat</h3></a>
+                <p class="topic-description">Lancer sa micro-entreprise en toute confiance : Guide des premières démarches pour démarrer son activité en tant qu’entrepreneur.</p>
+            </div>
+
+            <div class="topic-card">
+                <a href="#" style="text-decoration: none;"><h3 class="topic-title">Leadership et management intergénérationnel</h3></a>
+                <p class="topic-description">Manager des équipes intergénérationnelles : comprendre et motiver chaque génération : Comment travailler efficacement avec des équipes composées de jeunes et de seniors.</p>
+            </div>
+
+            <div class="topic-card">
+                <a href="#" style="text-decoration: none;"><h3 class="topic-title">Préparation à la retraite</h3></a>
+                <p class="topic-description">Se préparer à la retraite : bien gérer son patrimoine et ses projets" : Conseils pour organiser ses finances et son temps avant et après la retraite.</p>
+            </div>
+
+            <div class="topic-card">
+                <a href="#" style="text-decoration: none;"><h3 class="topic-title">Développement personnel</h3></a>
+                <p class="topic-description">Trouver un équilibre entre vie professionnelle et personnelle : Comment mieux gérer son emploi du temps et ses priorités pour mener une vie plus équilibrée.</p>
+            </div>
+
+            <div class="topic-card">
+                <h3 class="topic-title">Coming soon</h3>
+                <p class="topic-description">...</p>
+            </div>
+
+
+            <!-- Ajoutez les autres cartes de la même manière -->
+            <!-- Copier-coller le bloc .topic-card et adapter le contenu -->
+        </div>
+    </div>
+</body>
+</html>

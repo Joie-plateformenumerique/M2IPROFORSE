@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptation Numérique - Plateforme de Transition Professionnelle</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+        }
+        
+        .header {
+            background-color: #4285f4;
+            color: white;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+        
+        .nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .module-header {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 40px;
+            background-color: #e0d1ff;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .module-title {
+            font-size: 36px;
+            color: #6200ea;
+            margin-bottom: 20px;
+        }
+        
+        .module-description {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .submodules-section {
+            max-width: 1200px;
+            margin: 0 auto 50px;
+            padding: 0 20px;
+        }
+        
+        .submodules-title {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        
+        .submodules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .submodule-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+        }
+        
+        .submodule-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .submodule-header {
+            background-color: #e0d1ff;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .submodule-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 15px;
+            background-color: #6200ea;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .icon-evaluation::before {
+            content: "✓";
+            color: white;
+            font-size: 30px;
+        }
+        
+        .icon-guides::before {
+            content: "📚";
+            font-size: 30px;
+        }
+        
+        .icon-plans::before {
+            content: "📝";
+            font-size: 30px;
+        }
+        
+        .icon-tools::before {
+            content: "🛠️";
+            font-size: 30px;
+        }
+        
+        .submodule-title {
+            font-size: 20px;
+            color: #6200ea;
+            margin-bottom: 5px;
+        }
+        
+        .submodule-content {
+            padding: 20px;
+        }
+        
+        .submodule-description {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        
+        .submodule-info {
+            color: #777;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .submodule-button {
+            display: inline-block;
+            background-color: #6200ea;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            margin-top: 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .submodule-button:hover {
+            background-color: #4b01d1;
+        }
+        
+        .return-link {
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            color: #4285f4;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .return-link:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                padding: 15px;
+                gap: 15px;
+            }
+            
+            .module-header {
+                margin: 20px 15px;
+                padding: 25px;
+            }
+            
+            .module-title {
+                font-size: 28px;
+            }
+            
+            .submodules-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">JOIE - Plateforme de Transition Professionnelle</div>
+        <nav class="nav">
+            <a href="accueil.html">Modules</a>
+            <a href="forums.html">Forums</a>
+            <a href="transmission-savoirs.html">Mentorat</a>
+            <a href="profil.html">Profil</a>
+        </nav>
+    </header>
+    
+    <div class="module-header">
+        <h1 class="module-title">Adaptation Numérique</h1>
+        <p class="module-description">Développez vos compétences numériques et adaptez-vous aux évolutions technologiques du monde professionnel. Notre programme vous accompagne étape par étape dans cette transformation.</p>
+    </div>
+    
+    <section class="submodules-section">
+        <h2 class="submodules-title">Sous-modules disponibles</h2>
+        <div class="submodules-grid">
+            <div class="submodule-card">
+                <div class="submodule-header">
+                    <div class="submodule-icon icon-evaluation"></div>
+                    <h3 class="submodule-title">Test d'auto-évaluation</h3>
+                </div>
+                <div class="submodule-content">
+                    <p class="submodule-description">Évaluez vos compétences numériques actuelles pour identifier vos forces et vos axes d'amélioration.</p>
+                    <div class="submodule-info">
+                        <span>Durée: 30 min</span>
+                        <span>Interactif</span>
+                    </div>
+                    <a href="autoeval.html" class="submodule-button">Commencer</a>
+                </div>
+            </div>
+            
+            <div class="submodule-card">
+                <div class="submodule-header">
+                    <div class="submodule-icon icon-guides"></div>
+                    <h3 class="submodule-title">Guides et fiches pratiques</h3>
+                </div>
+                <div class="submodule-content">
+                    <p class="submodule-description">Accédez à notre bibliothèque de ressources pratiques pour vous former aux outils numériques essentiels.</p>
+                    <div class="submodule-info">
+                        <span>15 guides</span>
+                        <span>PDF téléchargeables</span>
+                    </div>
+                    <a href="guides-pratiques.html" class="submodule-button">Explorer</a>
+                </div>
+            </div>
+            
+            <div class="submodule-card">
+                <div class="submodule-header">
+                    <div class="submodule-icon icon-plans"></div>
+                    <h3 class="submodule-title">Plans d'action personnalisés</h3>
+                </div>
+                <div class="submodule-content">
+                    <p class="submodule-description">Créez votre parcours de développement personnalisé en fonction de vos objectifs professionnels.</p>
+                    <div class="submodule-info">
+                        <span>5 vidéos</span>
+                        <span>3 exercices</span>
+                    </div>
+                    <a href="plans-action.html" class="submodule-button">Découvrir</a>
+                </div>
+            </div>
+            
+            <div class="submodule-card">
+                <div class="submodule-header">
+                    <div class="submodule-icon icon-tools"></div>
+                    <h3 class="submodule-title">Boîte à outils</h3>
+                </div>
+                <div class="submodule-content">
+                    <p class="submodule-description">Découvrez notre sélection d'applications, logiciels et plateformes pour faciliter votre adaptation numérique.</p>
+                    <div class="submodule-info">
+                        <span>20+ outils</span>
+                        <span>Tutoriels inclus</span>
+                    </div>
+                    <a href="boite-outils.html" class="submodule-button">Accéder</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <a href="accueil.html" class="return-link">← Retour à l'accueil</a>
+</body>
+</html>

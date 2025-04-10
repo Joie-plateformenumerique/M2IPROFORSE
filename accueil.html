@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plateforme de Transition Professionnelle</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+        }
+        
+        .header {
+            background-color: #4285f4;
+            color: white;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+        
+        .nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .welcome-container {
+            max-width: 1200px;
+            margin: 30px auto;
+            background-color: #e6f0ff;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .welcome-title {
+            font-size: 36px;
+            color: #2057b3;
+            margin-bottom: 20px;
+        }
+        
+        .welcome-text {
+            font-size: 20px;
+            color: #4285f4;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+        
+        .start-button {
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .start-button:hover {
+            background-color: #2b6bcb;
+        }
+        
+        .modules-section {
+            max-width: 1200px;
+            margin: 0 auto 50px;
+            padding: 0 20px;
+        }
+        
+        .modules-title {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .module-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .module-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .module-card-content {
+            padding: 20px;
+        }
+        
+        .module-preview {
+            height: 160px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .reconversion {
+            background-color: #c5dbff;
+        }
+        
+        .adaptation {
+            background-color: #e0d1ff;
+        }
+        
+        .transmission {
+            background-color: #c5ffdb;
+        }
+        
+        .play-button {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .play-icon {
+            width: 0;
+            height: 0;
+            border-top: 15px solid transparent;
+            border-left: 25px solid;
+            border-bottom: 15px solid transparent;
+        }
+        
+        .reconversion .play-icon {
+            border-left-color: #2057b3;
+        }
+        
+        .adaptation .play-icon {
+            border-left-color: #6200ea;
+        }
+        
+        .transmission .play-icon {
+            border-left-color: #00695c;
+        }
+        
+        .module-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .reconversion .module-title {
+            color: #2057b3;
+        }
+        
+        .adaptation .module-title {
+            color: #6200ea;
+        }
+        
+        .transmission .module-title {
+            color: #00695c;
+        }
+        
+        .module-info {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                padding: 15px;
+                gap: 15px;
+            }
+            
+            .welcome-container {
+                margin: 20px 15px;
+                padding: 25px;
+            }
+            
+            .welcome-title {
+                font-size: 28px;
+            }
+            
+            .welcome-text {
+                font-size: 16px;
+            }
+            
+            .modules-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">JOIE - Plateforme de Transition Professionnelle</div>
+        <nav class="nav">
+            <a href="accueil.html">Modules</a>
+            <a href="forums.html">Forums</a>
+            <a href="transmission-savoirs.html">Mentorat</a>
+            <a href="profil.html">Profil</a>
+        </nav>
+    </header>
+    
+    <div class="welcome-container">
+        <h1 class="welcome-title">Bienvenue sur votre plateforme</h1>
+        <p class="welcome-text">Découvrez nos ressources pour vous accompagner<br>dans votre transition professionnelle</p>
+        <button class="start-button">Commencer maintenant</button>
+    </div>
+    
+    <section class="modules-section">
+        <h2 class="modules-title">Modules populaires</h2>
+        <div class="modules-grid">
+            <a href="adaptation-numerique.html" style="text-decoration: none;">
+                <div class="module-card">
+                    <div class="module-preview adaptation">
+                        <div class="play-button">
+                            <div class="play-icon"></div>
+                        </div>
+                    </div>
+                    <div class="module-card-content">
+                        <h3 class="module-title">Adaptation numérique</h3>
+                        <p class="module-info">5 vidéos - 4 exercices</p>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="reconversion.html" style="text-decoration: none;">
+                <div class="module-card">
+                    <div class="module-preview reconversion">
+                        <div class="play-button">
+                            <div class="play-icon"></div>
+                        </div>
+                    </div>
+                    <div class="module-card-content">
+                        <h3 class="module-title">Réussir sa reconversion ou sa transition</h3>
+                        <p class="module-info">8 vidéos - 3 exercices</p>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="transmission-savoirs.html" style="text-decoration: none;">
+                <div class="module-card">
+                    <div class="module-preview transmission">
+                        <div class="play-button">
+                            <div class="play-icon"></div>
+                        </div>
+                    </div>
+                    <div class="module-card-content">
+                        <h3 class="module-title">Transmission de savoirs</h3>
+                        <p class="module-info">6 vidéos - 2 exercices</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+</body>
+</html>

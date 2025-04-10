@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boîte à outils - Adaptation Numérique</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+       
+        body {
+            background-color: #f5f7fa;
+        }
+       
+        .header {
+            background-color: #4285f4;
+            color: white;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+       
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+       
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+       
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+       
+        .nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+       
+        .page-header {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 40px;
+            background-color: #e0d1ff;
+            border-radius: 15px;
+            text-align: center;
+        }
+       
+        .page-title {
+            font-size: 36px;
+            color: #6200ea;
+            margin-bottom: 20px;
+        }
+       
+        .page-description {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+       
+        .tools-section {
+            max-width: 1200px;
+            margin: 0 auto 50px;
+            padding: 0 20px;
+        }
+       
+        .category {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+       
+        .category-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e0d1ff;
+        }
+       
+        .category-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #6200ea;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            color: white;
+            font-size: 20px;
+        }
+       
+        .category-title {
+            font-size: 24px;
+            color: #6200ea;
+        }
+       
+        .tools-list {
+            list-style-type: none;
+        }
+       
+        .tool-item {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+       
+        .tool-item:last-child {
+            border-bottom: none;
+        }
+       
+        .tool-name {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+       
+        .tool-description {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+       
+        .return-link {
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            color: #4285f4;
+            text-decoration: none;
+            font-weight: bold;
+        }
+       
+        .return-link:hover {
+            text-decoration: underline;
+        }
+       
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+       
+        .tool-card {
+            background-color: #f9f6ff;
+            border-radius: 8px;
+            padding: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+       
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+       
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+       
+        .action-button {
+            display: inline-block;
+            background-color: #6200ea;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+       
+        .action-button:hover {
+            background-color: #4b01d1;
+        }
+       
+        .tutorial-button {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+       
+        .tutorial-button:hover {
+            background-color: #3e8e41;
+        }
+       
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                padding: 15px;
+                gap: 15px;
+            }
+           
+            .page-header {
+                margin: 20px 15px;
+                padding: 25px;
+            }
+           
+            .page-title {
+                font-size: 28px;
+            }
+           
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">JOIE - Plateforme de Transition Professionnelle</div>
+        <nav class="nav">
+            <a href="accueil.html">Modules</a>
+            <a href="forums.html">Forums</a>
+            <a href="transmission-savoirs.html">Mentorat</a>
+            <a href="profil.html">Profil</a>
+        </nav>
+    </header>
+   
+    <div class="page-header">
+        <h1 class="page-title">Boîte à outils numériques</h1>
+        <p class="page-description">Découvrez notre sélection d'outils classés par catégorie pour faciliter votre adaptation au monde numérique.</p>
+        <p class="page-description">Tous ces outils sont accompagnés de tutoriels pour vous permettre de les prendre en main rapidement.</p>
+    </div>
+   
+    <section class="tools-section">
+        <!-- Outils bureautiques et collaboratifs -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-icon">📊</div>
+                <h2 class="category-title">Outils bureautiques et collaboratifs</h2>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h3 class="tool-name">Google Docs / Sheets / Slides</h3>
+                    <p class="tool-description">Pour créer et partager des documents en ligne</p>
+                    <div class="action-buttons">
+                        <a href="https://workspace.google.com/intl/fr/products/docs/" class="action-button">Accéder</a>
+                        <a href="#" class="tutorial-button">Tutoriel</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <h3 class="tool-name">Microsoft Office Online</h3>
+                    <p class="tool-description">Version gratuite de Word, Excel, PowerPoint</p>
+                    <div class="action-buttons">
+                        <a href="https://www.microsoft.com/fr-fr/microsoft-365/free-office-online-for-the-web" class="action-button">Accéder</a>
+                        <a href="#" class="tutorial-button">Tutoriel</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <h3 class="tool-name">Canva</h3>
+                    <p class="tool-description">Créer des visuels pro sans compétences en graphisme</p>
+                    <div class="action-buttons">
+                        <a href="https://www.canva.com/fr_fr/" class="action-button">Accéder</a>
+                        <a href="#" class="tutorial-button">Tutoriel</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <h3 class="tool-name">Notion</h3>
+                    <p class="tool-description">Organiser son travail, ses idées, ou gérer un projet</p>
+                    <div class="action-buttons">
+                        <a href="https://www.notion.com/fr" class="action-button">Accéder</a>
+                        <a href="#" class="tutorial-button">Tutoriel</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <h3 class="tool-name">Trello</h3>
+                    <p class="tool-description">Gérer des tâches et projets en équipe avec des tableaux visuels</p>
+                    <div class="action-buttons">
+                        <a href="https://trello.com/fr" class="action-button">Accéder</a>
+                        <a href="#" class="tutorial-button">Tutoriel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <!-- Communication et organisation -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-icon">💬</div>
+                <h2 class="category-title">Communication et organisation</h2>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h3 class="tool-name">Gmail</h3>
+                    <p class="tool-description">Apprendre à utiliser sa boîte mail efficacement</p>
+                    <div class="action-buttons">
+                        <a href="https://workspace.google.com/intl/fr/gmail/" class="action-button">Accéder</a>
+                        <a href="#" class="tutorial-button">Tutoriel</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <h3 class="tool-name">Zoom</h3>
+                    <p class="tool-description">Organiser ou participer à des réunions en ligne</p>
+                    <div class="action-buttons">
+                        <a href="https://www.zoom.com/fr?lang=fr-FR" class="action-button">Accéder</a>
+                        <a href="#" class="tutorial-button">Tutoriel</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <h3 class="tool-name">Slack</h3>
+                    <p class="tool-description">Communiquer dans une équipe de travail</p>
+                    <div class="action-buttons">
+                        <a href="https://slack.com/intl/fr-fr" class="action-button">Accéder</a>
+                        <a href="#" class="tutorial-button">Tutoriel</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <h3 class="tool-name">Thunderbird Calendar</h3>
+                    <p class="tool-description">Planifier ses journées et recevoir des rappels</p>
+                    <div class="action-buttons">
+                        <a href="https://www.thunderbird.net/fr/calendar/" class="action-button">Accéder</a>
+                        <a href="#" class="tutorial-button">Tutoriel</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <h3 class="tool-name">WhatsApp Web</h3>
+                    <p class="tool-description">Envoyer des messages pro ou perso depuis un ordi</p>
+                    <div class="action-buttons">
+                        <a href="https://web.whatsapp.com/" class="action-button">Accéder</a>
+                        <a href="#" class="tutorial-button">Tutoriel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <!-- Présence en ligne & création -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-icon">🌐</div>
+                <h2 class="category-title">Présence en ligne & création</h2>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h3 class="tool-name">WordPress.com</h3>
+                    <p class="tool-description">Créer un blog ou un site sans coder</p>
+                    <div class="action-buttons">
+                        <a href="https://wordpress.com/fr/" class="action-button">Accéder</a>
+                        <a href="#" class="tutorial-button">Tutoriel</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <h3 class="tool-name">LinkedIn</h3>
+                    <p class="tool-description">Se créer un profil pro et réseauter</p>
+                    <div class="action-buttons">
+                        <a href="https://fr.linkedin.com/" class="action-button">Accéder</a>
+                        <a href="#" class="tutorial-button">Tutoriel</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <h3 class="tool-name">Buffer</h3>
+                    <p class="tool-description">Planifier ses publications sur les réseaux sociaux</p>
+                    <div class="action-buttons">
+                        <a href="https://buffer.com/" class="action-button">Accéder</a>
+                        <a href="#" class="tutorial-button">Tutoriel</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <h3 class="tool-name">Mailchimp</h3>
+                    <p class="tool-description">Créer une newsletter</p>
+                    <div class="action-buttons">
+                        <a href="https://mailchimp.com/fr/?currency=EUR" class="action-button">Accéder</a>
+                        <a href="#" class="tutorial-button">Tutoriel</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <h3 class="tool-name">ChatGPT</h3>
+                    <p class="tool-description">Utiliser l'IA pour s'assister dans ses tâches</p>
+                    <div class="action-buttons">
+                        <a href="https://chatgpt.com/" class="action-button">Accéder</a>
+                        <a href="#" class="tutorial-button">Tutoriel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <!-- Apprentissage & formation -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-icon">📚</div>
+                <h2 class="category-title">Apprentissage & formation</h2>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h3 class="tool-name">Khan Academy</h3>
+                    <p class="tool-description">Apprendre gratuitement (maths, sciences, etc.)</p>
+                    <div class="action-buttons">
+                        <a href="https://fr.khanacademy.org/" class="action-button">Accéder</a>
+                        <a href="#" class="tutorial-button">Tutoriel</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <h3 class="tool-name">Coursera / OpenClassrooms</h3>
+                    <p class="tool-description">Suivre des cours certifiants</p>
+                    <div class="action-buttons">
+                        <a href="https://openclassrooms.com/fr/" class="action-button">Accéder</a>
+                        <a href="#" class="tutorial-button">Tutoriel</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <h3 class="tool-name">YouTube</h3>
+                    <p class="tool-description">Apprendre par la vidéo (ex. : chaînes tutos, vulgarisation)</p>
+                    <div class="action-buttons">
+                        <a href="https://www.youtube.com/" class="action-button">Accéder</a>
+                        <a href="#" class="tutorial-button">Tutoriel</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <h3 class="tool-name">Duolingo</h3>
+                    <p class="tool-description">Apprendre une langue facilement</p>
+                    <div class="action-buttons">
+                        <a href="https://fr.duolingo.com/" class="action-button">Accéder</a>
+                        <a href="#" class="tutorial-button">Tutoriel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <!-- Sécurité & confidentialité -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-icon">🔒</div>
+                <h2 class="category-title">Sécurité & confidentialité</h2>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h3 class="tool-name">Dashlane</h3>
+                    <p class="tool-description">Gérer ses mots de passe en toute sécurité</p>
+                    <div class="action-buttons">
+                        <a href="https://www.dashlane.com/fr" class="action-button">Accéder</a>
+                        <a href="#" class="tutorial-button">Tutoriel</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <h3 class="tool-name">ProtonMail</h3>
+                    <p class="tool-description">Boîte mail sécurisée</p>
+                    <div class="action-buttons">
+                        <a href="https://proton.me/fr/mail" class="action-button">Accéder</a>
+                        <a href="#" class="tutorial-button">Tutoriel</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <h3 class="tool-name">Jitsi Meet</h3>
+                    <p class="tool-description">Visioconférence libre et sans inscription</p>
+                    <div class="action-buttons">
+                        <a href="https://meet.jit.si/" class="action-button">Accéder</a>
+                        <a href="#" class="tutorial-button">Tutoriel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+    <a href="adaptation-numerique.html" class="return-link">← Retour au module Adaptation Numérique</a>
+</body>
+</html>

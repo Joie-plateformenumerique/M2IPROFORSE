@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOIE - Se préparer à la retraite</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+        }
+        
+        .header {
+            background-color: #4285f4;
+            color: white;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-menu a:hover{
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        
+        .page-title {
+            background-color: #e6e0fa;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .page-title h1 {
+            color: #6200ee;
+            margin-bottom: 10px;
+        }
+        
+        .content-section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .content-title {
+            color: #6200ee;
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .content-list {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 30px;
+        }
+        
+        .content-list li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 18px;
+        }
+        
+        .content-list li:before {
+            content: "•";
+            color: #6200ee;
+            font-size: 24px;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+        
+        /* Nouveau style pour le lecteur vidéo */
+        .video-section {
+            margin-top: 30px;
+        }
+        
+        .video-player {
+            width: 100%;
+            background-color: #000;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 16 / 9;
+            margin-bottom: 20px;
+        }
+        
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .play-button:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .play-icon {
+            width: 0;
+            height: 0;
+            border-top: 20px solid transparent;
+            border-left: 35px solid white;
+            border-bottom: 20px solid transparent;
+            margin-left: 8px; /* Décalage pour centrer visuellement */
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background-color: #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+        
+        .progress {
+            width: 30%;
+            height: 100%;
+            background-color: #4285f4;
+            border-radius: 4px;
+        }
+        
+        .video-controls {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        
+        .left-controls {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .right-controls {
+            color: #333;
+        }
+        
+        .control-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #333;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+        
+        .control-button:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .quiz-section {
+            margin-top: 30px;
+            background-color: #f3f0ff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #4285f4;
+            text-decoration: none;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">JOIE - Plateforme de Transition Professionnelle</div>
+        <div class="nav-menu">
+            <a href="index.html">Modules</a>
+            <a href="forums.html">Forums</a>
+            <a href="transmission-savoirs.html">Mentorat</a>
+            <a href="profil.html">Profil</a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="page-title">
+            <h1>Objectif 1 : Se préparer à la retraite</h1>
+            <p>Ressources pour préparer votre retraite sereinement</p>
+        </div>
+        
+        <div class="content-section">
+            <div class="content-title">Ressources disponibles</div>
+            <ul class="content-list">
+                <li>Préparer sa retraite en toute sérénité : les étapes clés</li>
+                <li>Comprendre sa pension : comment est-elle calculée ?</li>
+            </ul>
+            
+            <div class="video-section">
+                
+                
+                <!-- Nouveau lecteur vidéo -->
+                <div class="video-player">
+                    <div class="play-button">
+                        <div class="play-icon"></div>
+                    </div>
+                </div>
+                
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+                
+                <div class="video-controls">
+                    <div class="left-controls">
+                        <button class="control-button">
+                            <span>▶</span>
+                            Lecture
+                        </button>
+                        <button class="control-button">
+                            <span>🔊</span>
+                            Volume
+                        </button>
+                        <button class="control-button">
+                            <span>⚙️</span>
+                            Paramètres
+                        </button>
+                        <button class="control-button">
+                            <span>📝</span>
+                            Sous-titres
+                        </button>
+                    </div>
+                    <div class="right-controls">
+                        12:34 / 28:56
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quiz-section">
+                <h2>Quiz de compréhension</h2>
+                <p>Testez vos connaissances sur la préparation à la retraite</p>
+                <!-- Ajouter ici votre formulaire de quiz -->
+            </div>
+        </div>
+        
+        <a href="index.html" class="back-link">← Retour aux objectifs</a>
+    </div>
+
+    <script>
+        // Script pour simuler un clic sur le bouton play
+        document.querySelector('.play-button').addEventListener('click', function() {
+            alert('Démarrage de la vidéo');
+            // Ici vous pourriez ajouter le code pour lancer la vraie vidéo
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOIE - Plans d'action personnalisés</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+        }
+        
+        .header {
+            background-color: #4285f4;
+            color: white;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-menu a:hover{
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        
+        .page-title {
+            background-color: #e6e0fa;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .page-title h1 {
+            color: #6200ee;
+            margin-bottom: 10px;
+        }
+        
+        .objective-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .objective-title {
+            color: #6200ee;
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .resources-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .resources-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .resources-list li:before {
+            content: "•";
+            color: #6200ee;
+            font-size: 18px;
+            position: absolute;
+            left: 0;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #4285f4;
+            text-decoration: none;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">JOIE - Plateforme de Transition Professionnelle</div>
+        <div class="nav-menu">
+            <a href="accueil.html">Modules</a>
+            <a href="forums.html">Forums</a>
+            <a href="transmission-savoirs.html">Mentorat</a>
+            <a href="profil.html">Profil</a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="page-title">
+            <h1>Plans d'action personnalisés</h1>
+            <p>Sélectionnez un objectif professionnel qui correspond à votre situation et découvrez des ressources adaptées.</p>
+        </div>
+        
+        <div class="objective-card">
+            <div class="objective-title"><a href="objectif1.html">Objectif 1 : Se préparer à la retraite (vidéo et quiz)</div></a>
+            <ul class="resources-list">
+                <li>Préparer sa retraite en toute sérénité : les étapes clés</li>
+                <li>Comprendre sa pension : comment est-elle calculée ?</li>
+            </ul>
+        </div>
+        
+        <div class="objective-card">
+            <div class="objective-title"><a href="objectif2.html">Objectif 2 : Se lancer en freelance (vidéo et quiz)</div></a>
+            <ul class="resources-list">
+                <li>Freelance : bien débuter sans se planter</li>
+                <li>Fixer ses tarifs et trouver ses premiers clients</li>
+            </ul>
+        </div>
+        
+        <div class="objective-card">
+            <div class="objective-title"><a href="objectif3.html">Objectif 3 : Changer de voie ou monter en compétences (vidéo et quiz)</div></a>
+            <ul class="resources-list">
+                <li>Construire son plan d'action professionnel en 30 jours</li>
+                <li>Une boîte à outils numérique qui regroupe plus de 20 outils (applications, logiciels, plateformes) avec tutoriels intégrés, pour développer l'autonomie technologique.</li>
+            </ul>
+        </div>
+        
+        <a href="adaptation-numerique.html" class="back-link">← Retour à l'accueil</a>
+    </div>
+</body>
+</html>
